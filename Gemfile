@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
+gem 'coffee-script-source', '1.8.0' #workaround to make it work on Windows
 gem 'coffee-rails', '~> 4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -43,8 +44,11 @@ group :development, :test do
 
 	gem 'guard-rspec'
 
+	gem 'tzinfo-data'
+
 	# Use sqlite3 as the database for Active Record
-	gem 'sqlite3', '~> 1.3.6'
+  # gem 'sqlite3', '~> 1.3.6'
+	gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec" #workaround to make it work on Windows
 
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 	gem 'spring'
